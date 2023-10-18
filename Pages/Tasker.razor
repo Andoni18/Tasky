@@ -1,0 +1,22 @@
+﻿@page "/Tasker"
+<h3>Tasker</h3>
+<p class="display-4">Ataza Konfigurazioa</p>
+<div class="dropdown-divider"></div>
+<div class="input-group"
+<input type="text" id="Atazak" />
+<button @onclick=AddTask>Add Task</button>
+<h1>Pending Tasks</h1>
+<ul>
+</ul>
+
+@code {
+    string Taskname = "";
+    List<TaskModels> Tasks = new List<TaskModels>();
+    void AddTask()
+    {
+        if(!string.IsNullOrEmpty(Taskname)){
+            Tasks.Add(new TaskModels { TaskName = taskname });
+            taskname = "";
+        }
+    }
+}
